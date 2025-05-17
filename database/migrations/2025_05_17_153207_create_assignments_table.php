@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('end_motive');
             $table->integer('kms');
             $table->time('arrive_time')->nullable();
-            $table->foreignId('workSite_id')->constrained('workSite')->onDelete('cascade');
+            $table->foreignId('worksite_id')->constrained('worksites')->onDelete('cascade');
             $table->foreignId('machine_id')->constrained()->onDelete('cascade');
         });
     }
