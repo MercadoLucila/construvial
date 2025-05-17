@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Work_Site extends Model
+class WorkSite extends Model
 {
     protected $fillable = [
         'name',
@@ -19,8 +19,9 @@ class Work_Site extends Model
         return $this->belongsTo(Province::class);
     }
 
-     public function assignment(): HasMany
+    public function assignment(): HasMany
     {
-        return $this->hasMany(assignment::class);
+        return $this->hasMany(Assignment::class);
     }
+
 }

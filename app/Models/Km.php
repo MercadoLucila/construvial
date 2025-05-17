@@ -11,3 +11,5 @@ class Km extends Model
         'total_km',
     ];
 }
+
+

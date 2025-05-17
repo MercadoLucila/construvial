@@ -16,27 +16,18 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->string('end_motive');
-            $table->integer('mileage');
+            $table->integer('kms');
             $table->time('arrive_time')->nullable();
             $table->foreignId('workSite_id')->constrained('workSite')->onDelete('cascade');
             $table->foreignId('machine_id')->constrained()->onDelete('cascade');
         });
     }
 
-
-    /*
-        'start_date',
-        'end_date',
-        'end_motive',
-        'mileage',
-        'arrive_time',
-    */
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('assigments');
+        Schema::dropIfExists('assignments');
     }
 };
