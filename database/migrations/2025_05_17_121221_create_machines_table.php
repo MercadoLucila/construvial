@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('model');
             $table->string('serial_number');
             $table->integer('actual_km');
-            
-
+            $table->foreignId('type_id')->constrained()->onDelete('cascade');
+            $table->foreignId('status_id')->constrained()->onDelete('cascade');
         });
     }
 
