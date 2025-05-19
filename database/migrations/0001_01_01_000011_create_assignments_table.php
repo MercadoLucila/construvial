@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assigments', function (Blueprint $table) {
+        Schema::create('assignments', function (Blueprint $table) {
             $table->id();
             $table->date('start_date');
             $table->date('end_date')->nullable();
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('assigments', function (Blueprint $table) {
+        Schema::table('assignments', function (Blueprint $table) {
         $table->dropForeign(['machine_id']);
         });
 
