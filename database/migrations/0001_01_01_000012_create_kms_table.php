@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('kms', function (Blueprint $table) {
             $table->id();
             $table->date('date');
+            $table->integer('km');
             $table->foreignId('machine_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

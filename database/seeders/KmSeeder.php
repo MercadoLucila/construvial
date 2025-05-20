@@ -4,15 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Status;
+use App\Models\Km;
 
-class StatusSeeder extends Seeder
+class KmSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Status::factory()->count(3)->create();
+        Km::factory()->count(10)->create();
     }
 }

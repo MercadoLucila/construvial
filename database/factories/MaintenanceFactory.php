@@ -33,7 +33,7 @@ class MaintenanceFactory extends Factory
         $item = $this->faker->unique()->randomElement($maintenances);
 
         return [
-            'name' => $item[$name],
+            'name' => $item['name'],
             'kms_needed' => $item['kms_needed']
         ];
     }

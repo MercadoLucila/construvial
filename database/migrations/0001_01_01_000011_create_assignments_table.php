@@ -20,6 +20,7 @@ return new class extends Migration
             $table->time('arrive_time')->nullable();
             $table->foreignId('worksite_id')->constrained('worksites')->onDelete('cascade');
             $table->foreignId('machine_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
