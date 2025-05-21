@@ -24,7 +24,7 @@ class StatusFactory extends Factory
             'En camino' => 'La maquinaria está en traslado hacia una obra.',
         ];
 
-        $name = $this->faker->unique()->randomElement(array_keys($statuses));
+        $name = $this->faker->unique(true)->randomElement(array_keys($statuses));
 
         return [
             'name' => $name,

@@ -23,7 +23,7 @@ class RoleFactory extends Factory
         ];
 
         return [
-            'name' => $this->faker->unique()->randomElement($roles)
+            'name' => $this->faker->unique(true)->randomElement($roles)
         ];
     }
 }

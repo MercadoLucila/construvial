@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class WorkSite extends Model
 {
     Use HasFactory;
+    
+    protected $table = 'worksites';
 
     protected $fillable = [
         'name',

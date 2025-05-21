@@ -17,7 +17,7 @@ class TypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['Tractor','Retroexcadora','Cargadora Frontal','Motoniveladora','Rodillo/Aplanadora','Asfaltadora','Camion Cisterna','Camion de volteo','Pala y Retroexcadaora','Topadora'])
+            'name' => $this->faker->unique(true)->randomElement(['Tractor','Retroexcadora','Cargadora Frontal','Motoniveladora','Rodillo/Aplanadora','Asfaltadora','Camion Cisterna','Camion de volteo','Pala y Retroexcadaora','Topadora'])
         ];
     }
 }
