@@ -17,9 +17,9 @@ class Machine extends Model
         'actual_km',
     ];
 
-    public function assignment(): BelongsTo
+    public function assignment(): hasMany
     {
-        return $this->belongsTo(Assignment::class);
+        return $this->hasMany(Assignment::class);
     }
 
     public function type(): BelongsTo

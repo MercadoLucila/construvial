@@ -13,6 +13,6 @@ class ProvinceSeeder extends Seeder
      */
     public function run(): void
     {
-        Province::factory()->count(24)->create();
+        Province::factory()->count(1)->create();
     }
 }

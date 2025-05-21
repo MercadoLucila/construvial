@@ -24,8 +24,8 @@ class Assignment extends Model
         return $this->belongsTo(WorkSite::class);
     }
 
-    public function machine(): HasMany
+    public function machine(): BelongsTo
     {
-        return $this->hasMany(Machine::class);
+        return $this->belongsTo(Machine::class);
     }
 }

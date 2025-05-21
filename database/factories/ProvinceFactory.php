@@ -44,7 +44,7 @@ class ProvinceFactory extends Factory
         ];
 
         return [
-            'name' => $this->faker->unique(true)->randomElement($provinces),
+            'name' => $this->faker->unique()->randomElement($provinces),
         ];
     }
 }
