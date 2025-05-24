@@ -26,7 +26,7 @@ class WorkSiteFactory extends Factory
             'name' => $this->faker->company . ' Construction Site',
             'start_date' => $startDate->format('Y-m-d'),
             'end_date' => $endDate ? $endDate->format('Y-m-d') : null,
-            'province_id' => Province::factory(),
+            'province_id' => Province::inRandomOrder()->value('id'),
         ];
     }
 }

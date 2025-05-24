@@ -5,7 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Role;
-
+use Carbon\Carbon;
+use Illuminate\Container\Attributes\DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class RoleSeeder extends Seeder
 {
@@ -14,6 +16,12 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::factory()->count(3)->create();
+        FacadesDB::table('roles')->insert([
+            ['name' => 'Administrator','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
+            ['name' => 'Machine_Operator','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
+            ['name' => 'Construction_Foreman','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
+            ['name' => 'Visitor','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
+        ]);
+
     }
 }

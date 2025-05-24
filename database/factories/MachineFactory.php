@@ -24,8 +24,8 @@ class MachineFactory extends Factory
             'model' => $this->faker->unique()->word(),
             'serial_number' => strtoupper($this->faker->bothify('SN-####-??')),
             'actual_km' => $this->faker->numberBetween(0, 100000),
-            'type_id' => Type::factory(),
-            'status_id' => Status::factory(),
+            'type_id' =>  Type::inRandomOrder()->value('id'),
+            'status_id' => Status::inRandomOrder()->value('id'),
         ];
     }
 }

@@ -30,7 +30,7 @@ class MaintenanceFactory extends Factory
             ['name' => 'Revisión general', 'kms_needed' => 5000],
         ];
 
-        $item = $this->faker->unique(true)->randomElement($maintenances);
+        $item = $this->faker->unique()->randomElement($maintenances);
 
         return [
             'name' => $item['name'],
