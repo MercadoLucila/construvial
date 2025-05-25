@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Machine;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class MachineController extends Controller
 {
     public function traerMaquinas(){
-        $maquinas = Machine::all();
+        $maquinas = Machine::paginate(12);
+        $tipos = Type::all();
 
-        return view("maquinas", compact("maquinas"));
+        return view("maquinas", compact("maquinas","tipos"));
     }
 }
