@@ -22,4 +22,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/maquinas', [MachineController::class, 'traerMaquinas'])->name('maquinas');
 
+Route::get('/borrarmaquina', [MachineController::class, 'traerMaquinas'])->name('borrarmaquinas');
+
+Route::get('/maquinas/{id}/edit', [MachineController::class, 'edit'])->name('maquinas.edit');
+
+Route::delete('/maquinas/{id}', [MachineController::class, 'delete'])->name('maquinas.destroy');
+
+
 require __DIR__.'/auth.php';
