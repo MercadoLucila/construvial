@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class MachineController extends Controller
 {
     public function traerMaquinas(){
-        $maquinas = Machine::paginate(12);
+        $maquinas = Machine::paginate(6);
         $tipos = Type::all();
 
         return view("maquinas", compact("maquinas","tipos"));
