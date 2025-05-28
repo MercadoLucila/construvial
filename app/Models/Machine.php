@@ -15,6 +15,8 @@ class Machine extends Model
         'model',
         'serial_number',
         'actual_km',
+        'type_id',
+        'status_id',
     ];
 
     public function assignment(): hasMany

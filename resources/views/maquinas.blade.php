@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-6">Máquinas</h1>
+    <div class="flex flex-row align-middle text-center">
+        <h1 class=" font-bold flex ml-6 text-4xl mt-4">Máquinas</h1>
+        <select name="filtro" id="filtro" class="mt-4 ml-4 rounded shadow focus:ring-yellow-400 border-yellow-500
+            @foreach ($estatus as $status)
+                <option value="{{$status->id}}">{{$status->name}}</option>
+            @endforeach
+        </select>
+        <a href="{{route('maquinas.prepare')}}" class="ml-auto mt-5 mr-8 text-2xl bg-yellow-500 text-white shadow rounded-md p-2 pl-6 pr-6">Subir Máquina</a>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 gap-6 p-6">
         @foreach ($maquinas as $maquina)
             @php
@@ -41,7 +50,7 @@
             <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition duration-300">
                 <div class="flex flex-row justify-between items-center h-full">
 
-                    {{-- Columna izquierda: Texto --}}
+                    
                     <div class="w-1/2 pr-2 flex flex-col gap-2">
                         <a href="#">
                             <h5 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white mb-1">
@@ -67,13 +76,13 @@
                             </svg>
                         </p>
                         <div class="flex space-x-4 mt-4">
-                            {{-- Botón Editar --}}
+                            
                             <a href="{{ route('maquinas.edit', $maquina->id) }}"
                                 class="px-4 py-2 bg-yellow-200 text-yellow-800 font-semibold rounded hover:bg-yellow-300 transition">
                                 Editar
                             </a>
 
-                            {{-- Botón Eliminar --}}
+                            
                             <form action="{{ route('maquinas.destroy', $maquina->id) }}" method="POST"
                                 onsubmit="return confirm('¿Estás segura de que querés eliminar esta máquina?')">
                                 @csrf
@@ -87,7 +96,7 @@
 
                     </div>
 
-                    {{-- Columna derecha: Imagen --}}
+                    
                     <div class="w-1/2 pl-2">
                         <img class="w-full h-42 object-cover rounded-md border border-gray-200 shadow-sm dark:border-gray-700"
                             src="{{ asset('storage/imagenes/' . $nombreTipoMaquina . '.jpg') }}"
@@ -100,4 +109,5 @@
     <div class="mt-8 flex items-center justify-center ml-2">
         {{ $maquinas->links() }}
     </div>
+    @vite("resources/js/maquinas.js")
 @endsection
